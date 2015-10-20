@@ -1,9 +1,9 @@
-body{
-	width:500px;
-
+.list-group-item-heading.mail-subject{
+	width:470px;
 }
-
-.mail-item {
-  line-height: 2em;
-  border-bottom: 1px black solid;
+.badge{
+	cursor:pointer;
+}
+.glyphicon.glyphicon-thumbs-down.unsubscribe{
+	font-size: xx-large;
 }

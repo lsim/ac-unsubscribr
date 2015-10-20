@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>IM A TITLE</title>
-    <link rel="stylesheet" href="../styles/main.css">
 		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="../styles/main.css">
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../scripts/app.js"></script>
 </head>
@@ -11,8 +11,8 @@
 	<div ng-controller="MainCtrl">
 		<ul class="list-group">
 		  <li class="list-group-item" ng-repeat="mail in mails">
-		    <span class="badge"><span class="glyphicon glyphicon-thumbs-down"></span></span>
-		    <h4 class="list-group-item-heading">{{mail.subject}}</h4>
+		    <span class="badge"><span class="glyphicon glyphicon-thumbs-down unsubscribe"></span></span>
+		    <h4 class="list-group-item-heading mail-subject">{{mail.subject}}</h4>
     		<p class="list-group-item-text">{{mail.text}}</p>
 		  </li>
 		</ul>
