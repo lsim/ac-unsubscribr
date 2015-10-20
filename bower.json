@@ -2,6 +2,8 @@
   "name": "ac-unsubscribr",
   "private": true,
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "angular-material": "~0.11.4"
+  },
   "devDependencies": {}
 }

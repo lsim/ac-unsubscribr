@@ -1,0 +1,9 @@
+body{
+	width:500px;
+
+}
+
+.mail-item {
+  line-height: 2em;
+  border-bottom: 1px black solid;
+}
