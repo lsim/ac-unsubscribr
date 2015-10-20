@@ -2,13 +2,19 @@
 <html>
 <head>
     <title>IM A TITLE</title>
-    <script src="../lib/angular.min.js"></script>
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../lib/angular/angular.min.js"></script>
     <script src="../scripts/app.js"></script>
+
 </head>
 <body ng-app="app">
-	<div >
-		<p>{{hello}}</p>
-		<input ng-model="hello"/>
+	<div ng-controller="MainCtrl">
+		<div class="mails">
+			<div class="mail-item" ng-repeat="mail in mails">
+				<button ng-click="unsubscribe(mail)">Never again!</button>
+				<span>{{mail.subject}}</span>
+			</div>
+		</div>	
 		<button ng-click="doFancyAPIStuff()">API Stuff</button>
 	</div>
 </body>
