@@ -7,3 +7,9 @@ body{
   line-height: 2em;
   border-bottom: 1px black solid;
 }
+
+iframe {
+	border: 0;
+	width: 100%;
+	height: 400px;
+}

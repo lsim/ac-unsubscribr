@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<!-- <table class="table table-hover">
 	<thead>
 	  <tr>
 	    <th>From</th>
@@ -19,4 +19,13 @@
 	    <td colspan="4" align="center">Your inbox is empty.</td>
 	  </tr>
 	</tbody>
-</table>	
+</table>	 -->
+
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="email in home.emails">
+    <span class="badge" ng-click="unsubscribe(email.Id)"><span class="glyphicon glyphicon-thumbs-down"></span></span>
+    <h4 class="list-group-item-heading">{{email.Subject}}</h4>
+	<p class="list-group-item-text">{{email.BodyPreview}}</p>
+  </li>
+</ul>
+<button ng-click="doFancyAPIStuff()">API Stuff</button>

@@ -8,17 +8,6 @@
     <script src="../scripts/app.js"></script>
 </head>
 <body ng-app="app">
-	<iframe src="http://localhost:8080/redirect.html" width="320" height="300"></iframe>
-
-	<div ng-controller="MainCtrl">
-		<ul class="list-group">
-		  <li class="list-group-item" ng-repeat="mail in mails">
-		    <span class="badge"><span class="glyphicon glyphicon-thumbs-down"></span></span>
-		    <h4 class="list-group-item-heading">{{mail.subject}}</h4>
-    		<p class="list-group-item-text">{{mail.text}}</p>
-		  </li>
-		</ul>
-		<button ng-click="doFancyAPIStuff()">API Stuff</button>
-	</div>
+	<iframe src="http://localhost:8080/redirect.html"></iframe>
 </body>
 </html>
