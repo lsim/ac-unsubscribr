@@ -8,3 +8,4 @@ package
 scripts/*.js
 scripts/*.map
 *.zip
+.DS_STORE
