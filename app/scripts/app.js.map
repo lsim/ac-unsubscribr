@@ -1,0 +1,1 @@
+{"version":3,"sources":["../scripts.babel/app.js"],"names":[],"mappings":";;;;;;;AAKA,OAAO,CAAC,MAAM,CAAC,KAAK,EAAE,EAAE,CAAC,CAAC","file":"app.js","sourcesContent":["/**\n*  Module\n*\n* Description\n*/\nangular.module('app', []);"]}
