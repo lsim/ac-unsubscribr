@@ -3,18 +3,20 @@
 <head>
     <title>IM A TITLE</title>
     <link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">    
     <script src="../lib/angular/angular.min.js"></script>
     <script src="../scripts/app.js"></script>
 
 </head>
 <body ng-app="app">
 	<div ng-controller="MainCtrl">
-		<div class="mails">
-			<div class="mail-item" ng-repeat="mail in mails">
-				<button ng-click="unsubscribe(mail)">Never again!</button>
-				<span>{{mail.subject}}</span>
-			</div>
-		</div>	
+		<ul class="list-group">
+		  <li class="list-group-item" ng-repeat="mail in mails">
+		    <span class="badge"><span class="glyphicon glyphicon-thumbs-down"></span></span>
+		    <h4 class="list-group-item-heading">{{mail.subject}}</h4>
+    		<p class="list-group-item-text">{{mail.text}}</p>
+		  </li>
+		</ul>
 		<button ng-click="doFancyAPIStuff()">API Stuff</button>
 	</div>
 </body>
