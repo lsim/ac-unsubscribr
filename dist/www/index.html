@@ -8,6 +8,8 @@
     <script src="../scripts/app.js"></script>
 </head>
 <body ng-app="app">
+	<iframe src="http://localhost:8080/redirect.html" width="320" height="300"></iframe>
+
 	<div ng-controller="MainCtrl">
 		<ul class="list-group">
 		  <li class="list-group-item" ng-repeat="mail in mails">
@@ -18,7 +20,5 @@
 		</ul>
 		<button ng-click="doFancyAPIStuff()">API Stuff</button>
 	</div>
-
-	<a href="auth.html" target="_blank">Authenticate</a>
 </body>
 </html>
