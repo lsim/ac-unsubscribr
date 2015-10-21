@@ -10,7 +10,9 @@
 	<ul class="list-group">
 	  <li class="list-group-item" ng-repeat="email in home.emails track by email.Id" ng-animate="{leave: 'animate-leave'}">
 	    <span class="badge" ng-click="unsubscribe(email)"><span class="glyphicon glyphicon-thumbs-down unsubscribe"></span></span>
-	    <h4 class="list-group-item-heading mail-subject">{{email.Subject}}</h4>
+	    <h4 class="list-group-item-heading mail-subject">
+	    	<a ng-href="{{email.WebLink}}" target="_blank">{{email.Subject}}</a>
+	    </h4>
 		<p class="list-group-item-text">{{email.BodyPreview}} ... </p>
 	  </li>
 	</ul>
