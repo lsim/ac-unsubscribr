@@ -1,15 +1,19 @@
-body{
-	width:500px;
-
+.list-group-item-heading.mail-subject{
+	width:470px;
 }
-
-.mail-item {
-  line-height: 2em;
-  border-bottom: 1px black solid;
+.badge{
+	cursor:pointer;
+	margin: 10px 0;
+	background-color: #d9534f !important;
 }
-
+.badge span {
+	vertical-align: middle;
+}
+.glyphicon.glyphicon-thumbs-down.unsubscribe{
+	font-size: xx-large;
+}
 iframe {
 	border: 0;
-	width: 100%;
+	width: 600px;
 	height: 400px;
 }

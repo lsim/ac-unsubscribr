@@ -1,31 +1,23 @@
-<!-- <table class="table table-hover">
-	<thead>
-	  <tr>
-	    <th>From</th>
-	    <th>Subject</th>
-	    <th>Body Preview</th>
-	    <th>Web Link</th>
-	  </tr>
-	</thead>
-	<tbody>
-	  <tr ng-repeat="email in home.emails">
-	    <td>{{ email.id }} {{email.Sender.EmailAddress.Name}} ({{email.Sender.EmailAddress.Address}})</td>
-	    <td>{{email.Subject}}</td>
-	    <td>{{email.BodyPreview}}</td>
-	    <td><a href={{email.WebLink}}>View on OWA</a></td>
-	  </tr>
+<div ng-if="home.emails.length > 0">
+    
+	<p align="center">
+		<span class="badge" ng-click="unsubscribeAll(home.emails)">
+			<span class="glyphicon glyphicon-thumbs-down unsubscribe"></span>
+			<span>Unsubscribe All</span>
+		</span>
+	</p>
 
-	  <tr ng-if="home.emails.length == 0">
-	    <td colspan="4" align="center">Your inbox is empty.</td>
-	  </tr>
-	</tbody>
-</table>	 -->
+	<ul class="list-group">
+	  <li class="list-group-item" ng-repeat="email in home.emails track by $index">
+	    <span class="badge" ng-click="unsubscribe(email)"><span class="glyphicon glyphicon-thumbs-down unsubscribe"></span></span>
+	    <h4 class="list-group-item-heading mail-subject">{{email.Subject}}</h4>
+		<p class="list-group-item-text">{{email.BodyPreview}} ... </p>
+	  </li>
+	</ul>
 
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="email in home.emails">
-    <span class="badge" ng-click="unsubscribe(email.Id)"><span class="glyphicon glyphicon-thumbs-down"></span></span>
-    <h4 class="list-group-item-heading">{{email.Subject}}</h4>
-	<p class="list-group-item-text">{{email.BodyPreview}}</p>
-  </li>
-</ul>
-<button ng-click="doFancyAPIStuff()">API Stuff</button>
+</div>
+
+<div ng-if="home.emails.length === 0">
+	<br><br>
+	<p align="center">We are cool!</p>
+</div>
