@@ -3,7 +3,7 @@
 *
 * Description
 */
-var app = angular.module('app', ['ngRoute', 'AdalAngular']);
+var app = angular.module('app', ['ngRoute', 'AdalAngular', 'ngAnimate']);
 
 app.config(['$routeProvider', '$httpProvider', 'adalAuthenticationServiceProvider', function ($routeProvider, $httpProvider, adalAuthenticationServiceProvider) {
 	$routeProvider
@@ -57,14 +57,17 @@ app.controller('HomeController', ['$http', '$scope', '$q', function ($http, $sco
 		return emails;
 	};
 
-	$http.get("https://outlook.office365.com/api/v1.0/me/messages").then(function (response) {
-		console.log("success");
-		console.log(response);
-		vm.emails = filterForUnsubscribe(response.data.value);
-	}, function (error) {
-		console.log("error");
-		console.log(error);
-	});
+	var getMessages = function () {
+		$http.get("https://outlook.office365.com/api/v1.0/me/messages").then(function (response) {
+			console.log("success");
+			console.log(response);
+			vm.emails = filterForUnsubscribe(response.data.value);
+		}, function (error) {
+			console.log("error");
+			console.log(error);
+		});
+	};
+	getMessages();
 
 	// get "Junk" folder id
 	$http.get("https://outlook.office365.com/api/v1.0/me/folders").then(function (response) {
@@ -98,19 +101,19 @@ app.controller('HomeController', ['$http', '$scope', '$q', function ($http, $sco
 		});
 
 		$q.all(dfds).then(function() {
-			document.location.reload();
+			// document.location.reload();
+			getMessages();
 		});
 	};
 
 	$scope.unsubscribe = function (email) {
 		// move to Junk folder
 		unsubscribe(email).then(function () {
-			document.location.reload();
+			// document.location.reload();
+			getMessages();
 		});
 	};
 }]);
-
-// TODO: Authenticate
 
 // TODO: Video
 
