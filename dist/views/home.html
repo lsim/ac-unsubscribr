@@ -1,11 +1,12 @@
 <div ng-if="home.emails.length > 0">
     
-	<p align="center">
-		<span class="badge" ng-click="unsubscribeAll(home.emails)">
+	<div style="height: 60px;">
+		<img src="views/outlook-logo.png" class="pull-left" style="margin: 18px; width: 120px;"/>
+		<div class="badge pull-right" ng-click="unsubscribeAll(home.emails)" style="margin: 10px">
 			<span class="glyphicon glyphicon-thumbs-down unsubscribe"></span>
 			<span>Unsubscribe All</span>
-		</span>
-	</p>
+		</div>
+	</div>
 
 	<ul class="list-group">
 	  <li class="list-group-item" ng-repeat="email in home.emails track by email.Id" ng-animate="{leave: 'animate-leave'}">
@@ -22,4 +23,11 @@
 <div ng-if="home.emails.length === 0">
 	<br><br>
 	<p align="center">We are cool!</p>
+	<div>
+	    <img src="views/outlook-logo.png" style="display: block; margin: 18px auto; width: 120px;"/>
+	</div>
 </div>
+
+<p align="center" ng-if="loading">
+    <img src="views/loading_spinner.gif" />
+</p>

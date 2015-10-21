@@ -42,6 +42,8 @@ app.controller('HomeController', ['$http', '$scope', '$q', function ($http, $sco
 	var vm = this;
 	var junkFolderId = "";
 
+	$scope.loading = true;
+
 	var filterForUnsubscribe = function (emails) {
 		var emails = emails.map(function (email) {
 			var links = $(email.Body.Content).find("a");
@@ -62,6 +64,7 @@ app.controller('HomeController', ['$http', '$scope', '$q', function ($http, $sco
 			console.log("success");
 			console.log(response);
 			vm.emails = filterForUnsubscribe(response.data.value);
+			$scope.loading = false;
 		}, function (error) {
 			console.log("error");
 			console.log(error);
